@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# DEVinHouse_M1P1
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projeto 2 - Módulo 1 do curso DEVinHouse (SENAI)  
+Última atualização: 30/01/2022
 
-## Available Scripts
+## Premissas
 
-In the project directory, you can run:
+Criação de uma aplicação em React para o gerenciamento de unidades geradoras de energia.
 
-### `npm start`
+<details>
+  <summary>Requisitos</summary>
+  
+- Tela de login;
+- Menu lateral;
+- Tela Dashboard;
+- Tela com lista de Unidades;
+- Tela para cadastro de Unidade;
+- Tela para edição de Unidade;
+- Botão de remover unidade na tela de listagem;
+- Botão de editar unidade na tela de listagem;
+- Tela de lançamento de geração mensal.
+</details>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<details>
+  <summary>Critérios para máxima avaliação</summary>
+  
+- Criação dos cards e gráfico na tela Dashboard, usando a API para a montagem de dados (_react-chartjs-2_);
+- Tela de login conforme mockup com eventos de _onChange_ e _onSubmit_ para validação de dados;
+- Menu lateral conforme mockup com roteamento para da aplicação utilizando _react-router-dom_;
+- Tela de listagem de unidades utilizando os dados da rota /unidades e inserindo o botão de remover e editar em cada linha;
+- Tela de cadastro de unidade com todos os campos, conforme mockup, e salvando valores na rota /unidades via _POST_ pelo evento _onSubmit_ do forms;
+- Tela de lançamento de geração mensal com todos os campos, conforme mockup, e salvando valores na rota /geracoes via _POST_;
+- Design agrádavel e intuitivo, com a estilização de todos os componentes;
+- Botão de remover com evento _onClick_ para removação da unidade no servidor e refletir mudança na tela;
+- Botão de editar que redireciona para tela de edição que realiza a atualização no servidor.
+</details>
+<br/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Planejamento
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- REACT
+  - Separação de telas;
+  - Separação de componente;
+  - Uso de _styled-components_ para estilização;
+  - Definição de rotas;
+  - Variáveis do _useContext_;
+  - Validação de dados;
+  - Função dos componentes;
+  - Remoção de bugs.
