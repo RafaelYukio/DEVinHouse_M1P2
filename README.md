@@ -5,6 +5,7 @@ Projeto 2 - Módulo 1 do curso DEVinHouse (SENAI)
 
 Usuários registrados em (/usuarios):
 
+------------------------------
 - login: usuario1@email.com
 - senha: senha1
 ------------------------------
