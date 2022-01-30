@@ -1,7 +1,21 @@
-# DEVinHouse_M1P1
+# DEVinHouse_M1P2
 
 Projeto 2 - Módulo 1 do curso DEVinHouse (SENAI)  
 Última atualização: 30/01/2022
+
+Usuários registrados em (/usuarios):
+
+- login: usuario1@email.com
+- senha: senha1
+------------------------------
+- login: usuario2@email.com
+- senha: senha2
+------------------------------
+- login: usuario3@email.com
+- senha: senha3
+------------------------------
+
+Unidades e gerações registrados em (/unidades).
 
 ## Premissas
 
