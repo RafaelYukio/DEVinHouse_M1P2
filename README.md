@@ -1,9 +1,10 @@
 # DEVinHouse_M1P2
 
 Projeto 2 - Módulo 1 do curso DEVinHouse (SENAI)  
-Última atualização: 30/01/2022
+Última atualização: 31/01/2022
 
-Usuários registrados em (/usuarios):
+Unidades e gerações registrados em (/unidades do servidor "db.json").
+Usuários registrados em (/usuarios do servidor "db.json"):
 
 ------------------------------
 - login: usuario1@email.com
@@ -16,7 +17,7 @@ Usuários registrados em (/usuarios):
 - senha: senha3
 ------------------------------
 
-Unidades e gerações registrados em (/unidades).
+(Backup do servidor com exemplos de usuários e unidades em "db_exemplo.txt")
 
 ## Premissas
 
@@ -61,4 +62,7 @@ Criação de uma aplicação em React para o gerenciamento de unidades geradoras
   - Variáveis do _useContext_;
   - Validação de dados;
   - Função dos componentes;
+  - Uso do _react-chartjs-2_;
+  - Uso do _react-toastify_;
+  - Uso do _react-uuid_;
   - Remoção de bugs.
