@@ -8,6 +8,7 @@ import Unidades from "./pages/Unidades";
 import CadastroUnidade from "./pages/CadastroUnidade";
 import EditaUnidade from "./pages/EditaUnidade";
 import CadastroGeracao from "./pages/CadastroGeracao";
+import { ToastContainer } from "react-toastify";
 import { UserContext } from "./context/User";
 import { UnidadeID } from "./context/UnidadeID";
 import { AngrySun } from "./context/AngrySun";
@@ -57,6 +58,11 @@ function App() {
 					</AngrySun.Provider>
 				</UnidadeID.Provider>
 			</UserContext.Provider>
+			<ToastContainer
+				autoClose="1500"
+				style={{ width: "400px", autoClose: "3500", limit: "2", offset:"30px", top:"100px"}}
+				toastStyle={{ backgroundColor: "#34568b", color: "white", fontSize:"18px", borderRadius: "15px" }}
+			/>
 		</div>
 	);
 }

@@ -3,13 +3,23 @@ import React from "react";
 import { InputLabel, InputSelectValues } from "./styles";
 
 function InputSelect({ label, name, values, ...props }) {
+	const apelidos = () =>
+		values.map((value) => {
+			return {
+				apelido: value.apelido,
+				id: value.id,
+			};
+		});
+
 	return (
 		<>
 			<InputLabel>
 				{label}
 				<InputSelectValues {...props}>
-					{values.map((value) => (
-						<option value={value.apelido}>{value}</option>
+					{apelidos().map((apelidosIDs) => (
+						<option value={apelidosIDs.apelido} key={apelidosIDs.id}>
+							{apelidosIDs.apelido}
+						</option>
 					))}
 				</InputSelectValues>
 			</InputLabel>

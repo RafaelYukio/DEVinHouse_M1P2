@@ -8,6 +8,8 @@ import Title from "../../components/Title";
 import InputCheckbox from "../../components/InputCheckbox";
 import Botao from "../../components/Button";
 import AngryCheckbox from "../../components/AngrySunCheckbox";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import { CadastroDiv, CadastroForm } from "./styles";
 import { UnidadeID } from "../../context/UnidadeID";
 
@@ -35,8 +37,9 @@ function EditaUnidade() {
 				setMarca(response.data.marca);
 				setModelo(response.data.modelo);
 				setStatus(response.data.status);
+				toast.success("Unidade atualizada!");
 			} catch (error) {
-				alert("Erro no servidor");
+				toast.error("Erro no servidor!");
 			}
 		}
 

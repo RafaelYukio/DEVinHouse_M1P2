@@ -6,6 +6,9 @@ import Header from "../../components/Header";
 import Title from "../../components/Title";
 import Card from "../../components/Card";
 import AngryCheckbox from "../../components/AngrySunCheckbox";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+
 import {
 	Chart as ChartJS,
 	CategoryScale,
@@ -150,8 +153,9 @@ function Dashboard() {
 						.filter((statusUnidade) => statusUnidade === false).length
 				);
 				setMediaEnergia(mediaGeracao(response.data));
+				toast.success("Dados atualizados do servidor!");
 			} catch (error) {
-				alert("Erro no servidor");
+				toast.error("Erro no servidor!")
 			}
 		}
 

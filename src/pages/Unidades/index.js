@@ -9,11 +9,13 @@ import Title from "../../components/Title";
 import List from "../../components/List";
 import MenuBotao from "../../components/MenuButton";
 import AngryCheckbox from "../../components/AngrySunCheckbox";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import { UnidadesDivButton } from "./styles";
 
 function Unidades() {
 	const { usuarioLogado } = useContext(UserContext);
-	const { setUnidadeID, unidadeID } = useContext(UnidadeID);
+	const { unidadeID } = useContext(UnidadeID);
 
 	const baseURL = "http://localhost:3333/unidades";
 
@@ -26,8 +28,9 @@ function Unidades() {
 			try {
 				const response = await axios.get(baseURL + "?usuario=" + usuarioLogado);
 				setUnidades(response.data);
+				toast.success("Dados atualizados do servidor!");
 			} catch (error) {
-				alert("Erro no servidor");
+				toast.error("Erro no servidor!");
 			}
 		}
 

@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useState, useContext } from "react";
 import { UserContext } from "../../context/User";
 import { AngrySun } from "../../context/AngrySun";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
 import InputText from "../../components/InputText";
@@ -46,12 +48,13 @@ function Logon() {
 			if (response.data[0].senha === senha) {
 				setUsuarioLogado(login);
 				setAutenticador(true);
+				toast.success("Logado com sucesso!");
 			} else {
 				setAutenticador(false);
-				alert("Senha inválida");
+				toast.error("Senha incorreta!");
 			}
 		} catch (error) {
-			alert("Email inválido");
+			toast.error("Email incorreto!");
 		}
 	}
 

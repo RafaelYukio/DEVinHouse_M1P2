@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import Menu from "../../components/Menu";
 import Header from "../../components/Header";
@@ -8,6 +8,8 @@ import Title from "../../components/Title";
 import InputCheckbox from "../../components/InputCheckbox";
 import Botao from "../../components/Button";
 import AngryCheckbox from "../../components/AngrySunCheckbox";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import { v4 as uuidv4 } from "uuid";
 import { CadastroDiv, CadastroForm } from "./styles";
 import { UserContext } from "../../context/User";
@@ -20,6 +22,10 @@ function CadastroUnidade() {
 	const [marca, setMarca] = useState("");
 	const [modelo, setModelo] = useState("");
 	const [status, setStatus] = useState(true);
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	async function criarUnidade(event) {
 		event.preventDefault();
@@ -49,8 +55,9 @@ function CadastroUnidade() {
 				},
 			});
 
+			toast.success("Unidade cadastrada!");
 		} catch (error) {
-			alert("Erro no servidor");
+			toast.error("Erro no servidor!");
 		}
 	}
 

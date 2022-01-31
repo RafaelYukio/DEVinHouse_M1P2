@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import { HeaderStyle, LogoutButton } from "./styles";
 
 function Header({ name }) {
@@ -8,6 +10,7 @@ function Header({ name }) {
 
 	function logout() {
 		setClickLogout(true);
+		toast.success("Logout realizado!");
 	}
 
 	return (
