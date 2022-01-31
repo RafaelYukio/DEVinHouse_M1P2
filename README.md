@@ -4,18 +4,25 @@ Projeto 2 - Módulo 1 do curso DEVinHouse (SENAI)
 Última atualização: 31/01/2022
 
 Unidades e gerações registrados em (/unidades do servidor "db.json").
+<br/>
 Usuários registrados em (/usuarios do servidor "db.json"):
 
-------------------------------
+---
+
 - login: usuario1@email.com
 - senha: senha1
-------------------------------
+
+---
+
 - login: usuario2@email.com
 - senha: senha2
-------------------------------
+
+---
+
 - login: usuario3@email.com
 - senha: senha3
-------------------------------
+
+---
 
 (Backup do servidor com exemplos de usuários e unidades em "db_exemplo.txt")
 
