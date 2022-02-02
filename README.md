@@ -1,7 +1,13 @@
-# DEVinHouse_M1P2 (branch para cadastro de novo usuário)
+# DEVinHouse_M1P2
 
 Projeto 2 - Módulo 1 do curso DEVinHouse (SENAI)  
-Última atualização: 31/01/2022
+Última atualização: 02/02/2022
+
+<details>
+  <summary>log</summary>
+  
+- 02/02/2022: adicionado funcionalidade de adicionar novo usuário;
+</details>
 
 Unidades e gerações registrados em (/unidades do servidor "db.json").
 <br/>
