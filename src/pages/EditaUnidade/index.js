@@ -37,7 +37,7 @@ function EditaUnidade() {
 				setMarca(response.data.marca);
 				setModelo(response.data.modelo);
 				setStatus(response.data.status);
-				toast.success("Unidade atualizada!");
+				toast.success("Dados atualizados do servidor!");
 			} catch (error) {
 				toast.error("Erro no servidor!");
 			}
@@ -62,8 +62,9 @@ function EditaUnidade() {
 				baseURL + unidadeID,
 				Object.assign(dadosUnidade, novosDados)
 			);
+			toast.success("Unidade atualizada!");
 		} catch (error) {
-			alert("Erro no servidor");
+			toast.error("Erro no servidor!");
 		}
 	}
 
