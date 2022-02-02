@@ -62,11 +62,9 @@ export const LogonForm = styled.form`
 	align-items: center;
 `;
 
-export const LogonButton = styled.button`
-	width: 90%;
-	height: 40px;
-	margin: 20px 0;
-	border-radius: 10px;
+export const LogonButtonDiv = styled.div`
+	margin: 15px;
+	display: flex;
 `;
 
 export const LogonSpanError = styled.span`

@@ -18,7 +18,7 @@ import {
 	Tooltip,
 	Legend,
 } from "chart.js";
-import { Line, Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import { Cards, LineDiv } from "./styles";
 import { UserContext } from "../../context/User";
 
@@ -58,6 +58,27 @@ function Dashboard() {
 	});
 
 	function dadosGrafico(data) {
+		function mediaGeracao() {
+			const valoresGeracao = [].concat.apply(
+				[],
+				data.map((unidade) => Object.values(unidade.geracao))
+			);
+
+			const numerosGeracao = valoresGeracao.filter((number) => number);
+
+			let mediaGeracao =
+				numerosGeracao.reduce(
+					(previousValue, currentValue) => previousValue + currentValue,
+					0
+				) / numerosGeracao.length;
+
+			mediaGeracao = mediaGeracao || 0;
+
+			setMediaEnergia(Math.round(mediaGeracao));
+
+			return Array(12).fill(Math.round(mediaGeracao));
+		}
+
 		function verificaBoolean(dado) {
 			let estado = "";
 
@@ -101,37 +122,29 @@ function Dashboard() {
 					data: Object.values(unidade.geracao),
 					fill: false,
 					borderColor: "#" + Math.floor(Math.random() * 16777215).toString(16),
+					borderWidth: 1,
 				}))
 				.concat({
 					spanGaps: true,
 					pointStyle: "circle",
 					label: "Geracão Total",
 					data: somaGeracoes(),
-					fill: false,
+					fill: true,
 					borderColor: "#" + Math.floor(Math.random() * 16777215).toString(16),
+					borderWidth: 5,
+				})
+				.concat({
+					spanGaps: true,
+					pointStyle: "circle",
+					label: "Geracão Média",
+					data: mediaGeracao(),
+					fill: true,
+					borderColor: "#" + Math.floor(Math.random() * 16777215).toString(16),
+					borderWidth: 5,
 				}),
 		};
 
 		return dadosGeracoes;
-	}
-
-	function mediaGeracao(data) {
-		const valoresGeracao = [].concat.apply(
-			[],
-			data.map((unidade) => Object.values(unidade.geracao))
-		);
-
-		const numerosGeracao = valoresGeracao.filter((number) => number);
-
-		let mediaGeracao =
-			numerosGeracao.reduce(
-				(previousValue, currentValue) => previousValue + currentValue,
-				0
-			) / numerosGeracao.length;
-
-		mediaGeracao = mediaGeracao || 0;
-
-		return Math.round(mediaGeracao);
 	}
 
 	useEffect(() => {
@@ -152,10 +165,10 @@ function Dashboard() {
 						.map((unidade) => unidade.status)
 						.filter((statusUnidade) => statusUnidade === false).length
 				);
-				setMediaEnergia(mediaGeracao(response.data));
+
 				toast.success("Dados atualizados do servidor!");
 			} catch (error) {
-				toast.error("Erro no servidor!")
+				toast.error("Erro no servidor!");
 			}
 		}
 

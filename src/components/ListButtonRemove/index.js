@@ -14,7 +14,6 @@ function BotaoRemove({ value, children }) {
 
 		try {
 			await axios.delete(baseURL + value);
-			setUnidadeID("");
 		} catch (error) {
 			alert("Erro no servidor");
 			setUnidadeID("");

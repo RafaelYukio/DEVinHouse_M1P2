@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import InputText from "../../components/InputText";
 import Botao from "../../components/Button";
 import AngryCheckbox from "../../components/AngrySunCheckbox";
@@ -15,23 +16,35 @@ import {
 	LogonFormDiv,
 	LogonFormImg,
 	LogonForm,
+	LogonButtonDiv,
 	LogonSpanError,
 	LogonFormTitle,
 } from "./styles";
 
 function Logon() {
 	const baseURL = "http://localhost:3333/usuarios?login=";
+	const baseURLUsuarios = "http://localhost:3333/usuarios";
 
 	const validaEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
 
 	const { setUsuarioLogado } = useContext(UserContext);
 	const { angrySun } = useContext(AngrySun);
 
+	const [usuarios, setUsuarios] = useState([]);
 	const [login, setLogin] = useState("");
 	const [senha, setSenha] = useState("");
 	const [erroLogin, setErroLogin] = useState("");
 	const [autenticador, setAutenticador] = useState(false);
 	const [imagem, setImagem] = useState("logodev.png");
+
+	async function getUsuarios() {
+		try {
+			const response = await axios.get(baseURLUsuarios);
+			setUsuarios(response.data);
+		} catch (error) {
+			alert("Nenhuma unidade cadastrada");
+		}
+	}
 
 	function validateEmail() {
 		if (validaEmail.test(login)) {
@@ -58,7 +71,43 @@ function Logon() {
 		}
 	}
 
+	async function criarUsuario(event) {
+		event.preventDefault();
+
+		if (validaEmail.test(login) && senha !== "") {
+
+			let usuarioExistente = false;
+			const listaUsuarios = usuarios.map((objeto) => objeto.login);
+
+			for (const valor of listaUsuarios) {
+				if (valor === login) {
+					usuarioExistente = true;
+				}
+			}
+
+			if (usuarioExistente) {
+				toast.error("Email já cadastrado!");
+			} else {
+				try {
+					await axios.post(baseURLUsuarios, {
+						id: uuidv4(),
+						login: login,
+						senha: senha,
+					});
+					toast.success("Usuário cadastrado!");
+					getUsuarios();
+				} catch (error) {
+					toast.error("Erro no servidor!");
+				}
+			}
+		} else {
+			toast.error("Email ou senha inválida!");
+		}
+	}
+
 	useEffect(() => {
+		getUsuarios();
+
 		angrySun ? setImagem("angrysun1.png") : setImagem("logodev.png");
 	}, [angrySun]);
 
@@ -90,7 +139,12 @@ function Logon() {
 							onChange={(event) => setSenha(event.target.value)}
 							type="password"
 						/>
-						<Botao>Logar</Botao>
+						<LogonButtonDiv>
+							<Botao type="submit">Logar</Botao>
+							<Botao type="button" onClick={criarUsuario}>
+								Registrar
+							</Botao>
+						</LogonButtonDiv>
 					</LogonForm>
 				</LogonFormDiv>
 			</LogonDiv>

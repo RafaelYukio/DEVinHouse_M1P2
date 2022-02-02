@@ -1,4 +1,4 @@
-# DEVinHouse_M1P2 (Branch para cadastro de novo usuário)
+# DEVinHouse_M1P2 (branch para cadastro de novo usuário)
 
 Projeto 2 - Módulo 1 do curso DEVinHouse (SENAI)  
 Última atualização: 31/01/2022
