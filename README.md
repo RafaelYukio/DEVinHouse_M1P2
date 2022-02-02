@@ -9,6 +9,12 @@ Projeto 2 - Módulo 1 do curso DEVinHouse (SENAI)
 - 02/02/2022: adicionado funcionalidade de adicionar novo usuário;
 </details>
 
+<details>
+  <summary>bugs conhecidos</summary>
+  
+- navegador Firefox não reconhece input tipo _month_;
+</details>
+
 Unidades e gerações registrados em (/unidades do servidor "db.json").
 <br/>
 Usuários registrados em (/usuarios do servidor "db.json"):
