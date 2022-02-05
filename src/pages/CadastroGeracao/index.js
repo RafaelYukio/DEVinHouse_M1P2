@@ -7,11 +7,13 @@ import InputText from "../../components/InputText";
 import Title from "../../components/Title";
 import Botao from "../../components/Button";
 import AngryCheckbox from "../../components/AngrySunCheckbox";
+import InputSelect from "../../components/InputSelect";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
-import { CadastroDiv, CadastroForm } from "./styles";
+import "react-datepicker/dist/react-datepicker.css";
+import DatePicker from "react-datepicker";
+import { CadastroDiv, CadastroForm, DatePickerLabel } from "./styles";
 import { UserContext } from "../../context/User";
-import InputSelect from "../../components/InputSelect";
 
 function CadastroGeracao() {
 	const { usuarioLogado } = useContext(UserContext);
@@ -20,7 +22,7 @@ function CadastroGeracao() {
 
 	const [unidades, setUnidades] = useState([]);
 	const [unidadeID, setUnidadeID] = useState("");
-	const [mesAno, setMesAno] = useState("");
+	const [anoMes, setAnoMes] = useState(new Date().toISOString().split("-").slice(0, 2).join("-"));
 	const [geracao, setGeracao] = useState("");
 
 	useEffect(() => {
@@ -32,7 +34,7 @@ function CadastroGeracao() {
 				setUnidades(response.data);
 				setUnidadeID(response.data[0].id);
 			} catch (error) {
-				alert("Nenhuma unidade cadastrada");
+				toast.error("Nenhuma unidade cadastrada!");
 			}
 		}
 
@@ -43,7 +45,7 @@ function CadastroGeracao() {
 		event.preventDefault();
 
 		const novaGeracao = {};
-		novaGeracao[mesAno] = geracao;
+		novaGeracao[anoMes] = geracao;
 
 		try {
 			let response = await axios.get(baseURLUnidade + unidadeID);
@@ -53,7 +55,7 @@ function CadastroGeracao() {
 			await axios.put(baseURLUnidade + unidadeID, response.data);
 			toast.success("Geração cadastrada!");
 		} catch (error) {
-			toast.error("Erro no servidor!")
+			toast.error("Erro no servidor!");
 		}
 	}
 
@@ -73,15 +75,14 @@ function CadastroGeracao() {
 								setUnidadeID(unidades[event.target.options.selectedIndex].id);
 							}}
 						/>
-						<InputText
-							label="Mês/ano"
-							width="50%"
-							onChange={(event) => {
-								setMesAno(event.target.value);
-							}}
-							type="month"
-							min="2022-01"
-							max="2022-12"
+						<DatePickerLabel>Selecione o mês de Geração</DatePickerLabel>
+						<DatePicker
+							value={anoMes}
+							onChange={(date) =>
+								setAnoMes(date.toISOString().split("-").slice(0, 2).join("-"))
+							}
+							dateFormat="yyyy-MM"
+							showMonthYearPicker
 						/>
 						<InputText
 							label="Total kWh gerado"
@@ -93,7 +94,7 @@ function CadastroGeracao() {
 							type="number"
 							min="0"
 						/>
-						<Botao type="submit">Adiciona</Botao>
+						<Botao type="submit">Adicionar</Botao>
 					</CadastroForm>
 				</CadastroDiv>
 			</div>

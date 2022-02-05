@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const InputLabel = styled.label`
 	width: 100%;
+	margin: 15px 0;
 	display: flex;
 	flex-direction: column;
 	font-weight: bold;
