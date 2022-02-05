@@ -47,9 +47,9 @@
       "local": "Local2",
       "marca": "Jinko",
       "modelo": "330Wp",
-      "status": false,
+      "status": true,
       "geracao": {
-        "2022-01": 2000,
+        "2022-01": 4000,
         "2022-02": 3000,
         "2022-03": 4000,
         "2022-04": 4000,

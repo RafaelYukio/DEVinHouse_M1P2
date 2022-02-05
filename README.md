@@ -1,4 +1,4 @@
-# DEVinHouse_M1P2
+# DEVinHouse_M1P2 (branch para uso do datepicker)
 
 Projeto 2 - Módulo 1 do curso DEVinHouse (SENAI)  
 Última atualização: 05/02/2022
