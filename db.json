@@ -24,7 +24,7 @@
       "local": "Local1",
       "marca": "Canadian",
       "modelo": "300Wp",
-      "status": true,
+      "status": false,
       "geracao": {
         "2022-01": 3000,
         "2022-02": 4000,
@@ -47,7 +47,7 @@
       "local": "Local2",
       "marca": "Jinko",
       "modelo": "330Wp",
-      "status": true,
+      "status": false,
       "geracao": {
         "2022-01": 2000,
         "2022-02": 3000,
