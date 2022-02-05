@@ -16,9 +16,9 @@ Projeto 2 - Módulo 1 do curso DEVinHouse (SENAI)
 - Não é possível adicionar geração de outros anos (possível solução: ao adicionar geração, adicionar objeto com todos os meses daquele ano, verificar se ano já existe e apenas substituir/adicionar o mês selecionado. No gráfico colocar um _select_ para os anos e exibir);
 </details>
 
-Unidades e gerações registrados em (/unidades do servidor "db.json").
+Unidades e gerações registrados em (localhost:3333/unidades do servidor "db.json").
 <br/>
-Usuários registrados em (/usuarios do servidor "db.json"):
+Usuários registrados em (localhost:3333/usuarios do servidor "db.json"):
 
 ---
 
