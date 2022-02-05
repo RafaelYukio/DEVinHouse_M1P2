@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { HeaderStyle, LogoutButton } from "./styles";
 
 function Header({ name }) {
+
 	const [clickLogout, setClickLogout] = useState(false);
 
 	function logout() {
