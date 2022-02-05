@@ -82,6 +82,8 @@ function CadastroGeracao() {
 								setAnoMes(date.toISOString().split("-").slice(0, 2).join("-"))
 							}
 							dateFormat="yyyy-MM"
+							minDate={new Date("01/01/2022")}
+							maxDate={new Date("12/31/2022")}
 							showMonthYearPicker
 						/>
 						<InputText

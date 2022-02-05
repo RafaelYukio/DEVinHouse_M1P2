@@ -7,14 +7,13 @@ Projeto 2 - Módulo 1 do curso DEVinHouse (SENAI)
   <summary>log</summary>
   
 - 02/02/2022: adicionado funcionalidade de adicionar novo usuário;
-- 05/02/2022: adicionado _datepicker_ para seleciona mês de geração;
-- 05/02/2022: ajustado layout do gráfico.
+- 05/02/2022: adicionado _datepicker_ para seleciona mês de geração; ajustado layout do gráfico; colocado limitação para selecionar apenas meses do ano de 2022.
 </details>
 
 <details>
   <summary>bugs/limitações</summary>
   
-- não da para adicionar geração de outros anos;
+- Não é possível adicionar geração de outros anos (possível solução: ao adicionar geração, adicionar objeto com todos os meses daquele ano, verificar se ano já existe e apenas substituir/adicionar o mês selecionado. No gráfico colocar um _select_ para os anos e exibir);
 </details>
 
 Unidades e gerações registrados em (/unidades do servidor "db.json").
