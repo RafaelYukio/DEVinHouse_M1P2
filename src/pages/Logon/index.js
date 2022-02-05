@@ -132,12 +132,14 @@ function Logon() {
 								validateEmail();
 							}}
 							type="email"
+							labelStyle={{margin: 0}}
 						/>
 						<LogonSpanError>{erroLogin}</LogonSpanError>
 						<InputText
 							placeholder="Digite sua senha"
 							onChange={(event) => setSenha(event.target.value)}
 							type="password"
+							labelStyle={{margin: 0}}
 						/>
 						<LogonButtonDiv>
 							<Botao type="submit">Logar</Botao>

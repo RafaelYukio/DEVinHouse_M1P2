@@ -2,10 +2,10 @@ import React from "react";
 
 import { InputLabel, InputTextValue } from "./styles";
 
-function InputText({ label, ...props }) {
+function InputText({ label, labelStyle, ...props }) {
 	return (
 		<>
-			<InputLabel>
+			<InputLabel style={labelStyle}>
 				{label}
 				<InputTextValue {...props} />
 			</InputLabel>
