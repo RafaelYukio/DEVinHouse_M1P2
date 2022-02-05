@@ -7,7 +7,8 @@ Projeto 2 - Módulo 1 do curso DEVinHouse (SENAI)
   <summary>log</summary>
   
 - 02/02/2022: adicionado funcionalidade de adicionar novo usuário;
-- 05/02/2022: adicionado _datepicker_ para seleciona mês de geração.
+- 05/02/2022: adicionado _datepicker_ para seleciona mês de geração;
+- 05/02/2022: ajustado layout do gráfico.
 </details>
 
 <details>

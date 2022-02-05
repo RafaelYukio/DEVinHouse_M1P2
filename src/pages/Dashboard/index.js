@@ -117,7 +117,8 @@ function Dashboard() {
 			datasets: data
 				.map((unidade) => ({
 					spanGaps: true,
-					pointStyle: "circle",
+					pointStyle: "crossRot",
+					lineTension: 0.3,
 					label: unidade.apelido + " (" + verificaBoolean(unidade.status) + ")",
 					data: Object.values(unidade.geracao),
 					fill: false,
@@ -127,20 +128,22 @@ function Dashboard() {
 				.concat({
 					spanGaps: true,
 					pointStyle: "circle",
+					lineTension: 0.3,
 					label: "Geracão Total",
 					data: somaGeracoes(),
 					fill: true,
 					borderColor: "#" + Math.floor(Math.random() * 16777215).toString(16),
-					borderWidth: 5,
+					borderWidth: 4,
 				})
 				.concat({
 					spanGaps: true,
 					pointStyle: "circle",
+					lineTension: 0.3,
 					label: "Geracão Média",
 					data: mediaGeracao(),
 					fill: true,
 					borderColor: "#" + Math.floor(Math.random() * 16777215).toString(16),
-					borderWidth: 5,
+					borderWidth: 4,
 				}),
 		};
 
