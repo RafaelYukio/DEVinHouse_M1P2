@@ -1,4 +1,4 @@
-# DEVinHouse_M1P2 (branch para uso do datepicker)
+# DEVinHouse_M1P2
 
 Projeto 2 - Módulo 1 do curso DEVinHouse (SENAI)  
 Última atualização: 05/02/2022
@@ -7,12 +7,13 @@ Projeto 2 - Módulo 1 do curso DEVinHouse (SENAI)
   <summary>log</summary>
   
 - 02/02/2022: adicionado funcionalidade de adicionar novo usuário;
+- 05/02/2022: adicionado _datepicker_ para seleciona mês de geração.
 </details>
 
 <details>
-  <summary>bugs conhecidos</summary>
+  <summary>bugs/limitações</summary>
   
-- navegador Firefox não reconhece input tipo _month_;
+- não da para adicionar geração de outros anos;
 </details>
 
 Unidades e gerações registrados em (/unidades do servidor "db.json").
