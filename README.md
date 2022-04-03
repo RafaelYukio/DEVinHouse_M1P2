@@ -39,7 +39,7 @@ Usuários registrados em (localhost:3333/usuarios do servidor "db.json"):
 
 (Backup do servidor com exemplos de usuários e unidades em "db_exemplo.txt")
 
-## Premissas
+## Objetivos
 
 Criação de uma aplicação em React para o gerenciamento de unidades geradoras de energia.
 
@@ -72,7 +72,7 @@ Criação de uma aplicação em React para o gerenciamento de unidades geradoras
 </details>
 <br/>
 
-## Planejamento
+## Etapas
 
 - REACT
   - Separação de telas;
